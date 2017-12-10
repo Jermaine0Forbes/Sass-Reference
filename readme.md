@@ -51,7 +51,7 @@ $list : (one, two, three);
 ```css
 $list: (puma, sea-slug, egret, salamander);
 
-@each $animal in  {
+@each $animal in $list {
   .#{$animal}-icon {
     background-image: url('/images/#{$animal}.png');
   }
