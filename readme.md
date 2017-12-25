@@ -6,7 +6,11 @@
 - [how to use each directive][each]
 - [how to create a list][list]
 - [how to use a while loop][while]
+- [how to import other sass files][import]
+- [how to use mixins][mixin]
 
+[mixin]:#how-to-use-mixins
+[import]:#how-to-import-other-sass-files
 [while]:#how-to-use-a-while-loop
 [list]:#how-to-create-a-list
 [each]:#how-to-use-each-directive
@@ -14,6 +18,76 @@
 [interpolation]:#how-to-use-interpolation
 [extend]:#how-to-use-extend
 [home]:#sass-reference
+
+### How to use mixins
+
+Mixins are similar to functions you can name the mixin and you can 
+add parameters to the mixin so that the values in the properties will 
+change. Not only that, any property that has dashes in them can be broken
+up into another bracket. As you will see down below
+
+#### Breaking dashes up into brackets
+
+Instead of adding the properties font-weight, font-size, or font-family.
+You can break it up into a bracket as you see here. And if you want 
+to add the mixin into a class or id you use the keyword `@include`.
+```css
+@mixin font-styling{
+	font:{
+		size:2em;
+		weight:bold;
+		family:helvetica,georgia,sans-serif;
+	}
+}
+
+	
+	#summary{
+
+
+	background:teal;
+	color:white;
+
+	@include font-styling;
+
+	}
+```
+
+#### Adding parameters
+
+Adding parameters allows you the change the values of the properties.
+In addition to that, you can set up default values within the parameters
+
+```css
+@mixin texting($pad, $color,$size:1.2em){
+	
+	font-size:$size;
+	padding: $pad;
+	background: $color;
+
+	text:{
+		transform:uppercase;
+		decoration:underline;
+	}
+}
+
+#summary-2{
+		@include texting(1.2em, #e44, 18px);
+	}
+
+```
+
+
+
+[go back home][home]
+
+### How to import other sass files
+
+```css
+
+@import "header";
+```
+
+[go back home][home]
 
 ### How to use a while loop
 
