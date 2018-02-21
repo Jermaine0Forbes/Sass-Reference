@@ -8,7 +8,9 @@
 - [how to use a while loop][while]
 - [how to import other sass files][import]
 - [how to use mixins][mixin]
+- [how to loop through multiple lists][loop-lists]
 
+[loop-lists]:#how-to-loop-through-multiple-lists
 [mixin]:#how-to-use-mixins
 [import]:#how-to-import-other-sass-files
 [while]:#how-to-use-a-while-loop
@@ -18,6 +20,28 @@
 [interpolation]:#how-to-use-interpolation
 [extend]:#how-to-use-extend
 [home]:#sass-reference
+
+### How to loop through multiple lists 
+
+**reference**
+- [stackoverflow](https://stackoverflow.com/questions/37343932/sass-each-loop-with-multiple-lists)
+
+```css
+
+$ids: 21, 33, 73;
+$colors: #fff, #000, #333;
+
+@for $i from 1 through length($ids) {
+  $id: nth($ids, $i);
+  $color: nth($colors, $i);
+    .category--#{$id},
+    .post--#{$id} {
+       color: #{$color};
+    }
+}
+```
+
+[go back home][home]
 
 ### How to use mixins
 
