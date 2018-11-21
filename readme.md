@@ -9,7 +9,9 @@
 - [how to import other sass files][import]
 - [how to use mixins][mixin]
 - [how to loop through multiple lists][loop-lists]
+- [how to loop through nested lists][nested-lists]
 
+[nested-lists]:#how-to-loop-through-nested-lists
 [loop-lists]:#how-to-loop-through-multiple-lists
 [mixin]:#how-to-use-mixins
 [import]:#how-to-import-other-sass-files
@@ -21,7 +23,75 @@
 [extend]:#how-to-use-extend
 [home]:#sass-reference
 
-### How to loop through multiple lists 
+### how to loop through nested lists
+<details>
+  <summary>
+  View Content
+  </summary>
+
+
+**CSS**
+```css
+$list: ("red",#ff4d4d), ("blue",#3366ff),("green",#009933);
+
+/****************
+  GENERAL
+****************/
+
+@for $i from 1 through length($list){
+
+  $col: nth($list, $i);
+  $hover: nth($col,2);
+  $bg: nth($col,1);
+
+  a{
+    color: $bg;
+
+    &:hover{
+      color:$hover;
+    }
+  }
+
+}
+```
+
+**SCSS**
+```css
+
+a
+{
+    color: 'red';
+}
+a:hover
+{
+    color: #ff4d4d;
+}
+
+a
+{
+    color: 'blue';
+}
+a:hover
+{
+    color: #36f;
+}
+
+a
+{
+    color: 'green';
+}
+a:hover
+{
+    color: #093;
+}
+```
+
+
+</details>
+
+[go back :house:][home]
+
+### How to loop through multiple lists
 
 **reference**
 - [stackoverflow](https://stackoverflow.com/questions/37343932/sass-each-loop-with-multiple-lists)
@@ -45,15 +115,15 @@ $colors: #fff, #000, #333;
 
 ### How to use mixins
 
-Mixins are similar to functions you can name the mixin and you can 
-add parameters to the mixin so that the values in the properties will 
+Mixins are similar to functions you can name the mixin and you can
+add parameters to the mixin so that the values in the properties will
 change. Not only that, any property that has dashes in them can be broken
 up into another bracket. As you will see down below
 
 #### Breaking dashes up into brackets
 
 Instead of adding the properties font-weight, font-size, or font-family.
-You can break it up into a bracket as you see here. And if you want 
+You can break it up into a bracket as you see here. And if you want
 to add the mixin into a class or id you use the keyword `@include`.
 ```css
 @mixin font-styling{
@@ -64,7 +134,7 @@ to add the mixin into a class or id you use the keyword `@include`.
 	}
 }
 
-	
+
 	#summary{
 
 
@@ -83,7 +153,7 @@ In addition to that, you can set up default values within the parameters
 
 ```css
 @mixin texting($pad, $color,$size:1.2em){
-	
+
 	font-size:$size;
 	padding: $pad;
 	background: $color;
