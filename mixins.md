@@ -8,7 +8,7 @@
   View Content
   </summary>
 
-```css
+```scss
 
 //  VARIABLE
 $l-blue: #42baff;
