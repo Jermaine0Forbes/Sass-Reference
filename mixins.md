@@ -1,6 +1,8 @@
 # Mixins
 
 
+[home]:#mixins
+
 
 ### change-color
 <details>
@@ -141,5 +143,4 @@ $colors: (white,white), (blue,$blue),(grey,$grey),(l-blue,$l-blue),(d-blue,$d-bl
 ```
 
 </details>
-
 [go back :house:][home]
