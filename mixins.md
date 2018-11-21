@@ -10,6 +10,15 @@
 
 ```css
 
+//  VARIABLE
+$l-blue: #42baff;
+$blue: #1b98e0;
+$d-blue: #004e7a;
+$grey: #777777;
+$d-grey:#333;
+$l-grey:#999;
+$l-grey2:#e5e5e5;
+
 $colors: (white,white), (blue,$blue),(grey,$grey),(l-blue,$l-blue),(d-blue,$d-blue),(d-grey,$d-grey),
 (l-grey,$l-grey),(l-grey2,$l-grey2);
 
@@ -45,9 +54,9 @@ $colors: (white,white), (blue,$blue),(grey,$grey),(l-blue,$l-blue),(d-blue,$d-bl
 
 **outputs**
 ```css
-****************
+/****************
   COLOR
-************COL****/
+****************/
 .color-white
 {
     color: white;
