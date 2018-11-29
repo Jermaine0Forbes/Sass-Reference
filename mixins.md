@@ -41,7 +41,7 @@ $colors: (white,white), (blue,$blue),(grey,$grey),(l-blue,$l-blue),(d-blue,$d-bl
 
 /****************
   COLOR
-************COL****/
+***************/
 
 .color-{
 @include change-color;
